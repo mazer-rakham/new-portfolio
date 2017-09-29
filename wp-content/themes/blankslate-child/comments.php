@@ -62,8 +62,8 @@
             </ul>
         </section>
     <?php 
-    endif; 
-    endif;
-    if ( comments_open() ) comment_form();
+            endif; 
+        endif;
+        if ( comments_open() ) comment_form();
     ?>
 </section>
