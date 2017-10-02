@@ -37,6 +37,6 @@ browserSync.init({
 // }))
 // });
 gulp.task('app', ['browser-sync'], function () { 
-gulp.watch(['app/wp-content/themes/blankslate-child/**/*.css'], [reload]);
-gulp.watch(['app/wp-content/themes/blankslate-child/**/*.php'], [reload]);
+gulp.watch(['wp-content/themes/blankslate-child/**/*.css'], [reload]);
+gulp.watch(['wp-content/themes/blankslate-child/**/*.php'], [reload]);
 });
