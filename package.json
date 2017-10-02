@@ -1,0 +1,33 @@
+{
+  "name": "mazer-rakham",
+  "version": "1.0.0",
+  "description": "New Portfolio Site",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazer-rakham/new-portfolio.git"
+  },
+  "keywords": [
+    "bare",
+    "minimum",
+    "wordpress",
+    "theme",
+    "portfolio"
+  ],
+  "author": "Thomas Flock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mazer-rakham/new-portfolio/issues"
+  },
+  "homepage": "https://github.com/mazer-rakham/new-portfolio#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-connect-php": "^1.0.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0"
+  }
+}
