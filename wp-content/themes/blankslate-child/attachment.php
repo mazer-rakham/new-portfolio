@@ -16,9 +16,7 @@
                 </a>
             </h1> 
             <?php 
-                edit_post_link(); 
-            ?>
-            <?php 
+                edit_post_link();             
                 get_template_part( 'entry', 'meta' ); 
             ?>
         </header>
