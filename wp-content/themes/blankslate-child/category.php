@@ -8,16 +8,10 @@
             ?>
     </header>
     <?php
-        if ( have_posts() ) : while ( have_posts() ) : the_post(); 
-    ?>
-    <?php 
+        if ( have_posts() ) : while ( have_posts() ) : the_post();  
         get_template_part( 'entry' ); 
-    ?>
-    <?php 
-        endwhile; 
+         endwhile; 
         endif; 
-    ?>
-    <?php 
         get_template_part( 'nav', 'below' ); 
     ?>
 </section>
