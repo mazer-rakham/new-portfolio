@@ -17,11 +17,7 @@
             } else {
                  echo '</h2>'; 
             } 
-            ?> 
-            <?php 
-                edit_post_link(); 
-            ?>
-        <?php 
+                edit_post_link();  
             if ( !is_search() ) get_template_part( 'entry', 'meta' ); 
         ?>
     </header>
