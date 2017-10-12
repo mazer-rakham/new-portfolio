@@ -12,11 +12,25 @@ function blankslate_setup()
         array('main-menu' => __('Main Menu', 'blankslate'))
     );
 }
+
+
 add_action('wp_enqueue_scripts', 'blankslate_load_scripts');
 function blankslate_load_scripts()
-{
+{   
     wp_enqueue_script('jquery');
+    wp_enqueue_script('bootstrap','https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',array('jquery'),'',true);
+    wp_enqueue_style( 'bootstrap-css','https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' ,'' , '', 'all' );
+    wp_enqueue_script('timleline-gsap', get_stylesheet_directory_uri() . '/javascript/TimelineMax.min.js','','', true);
+    wp_enqueue_script('main-javascript', get_stylesheet_directory_uri() . '/javascript/mazer-main.js',array('jquery'),'', true);
 }
+
+function register_my_menu() {
+    register_nav_menu('animated-menu',__( 'Animated Menu' ));
+  }
+  add_action( 'init', 'register_my_menu' );
+
+
+
 add_action('comment_form_before', 'blankslate_enqueue_comment_reply_script');
 function blankslate_enqueue_comment_reply_script()
 {
@@ -51,6 +65,9 @@ function blankslate_widgets_init()
         'after_title' => '</h3>',
     ));
 }
+if( !defined(mazer_image_path)){
+    define( 'mazer_image_path', get_stylesheet_directory_uri() . '/images' );
+   }
 function blankslate_custom_pings($comment)
 {
     $GLOBALS['comment'] = $comment;
