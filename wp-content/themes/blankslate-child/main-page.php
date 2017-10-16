@@ -25,24 +25,6 @@ get_header('secondary'); ?>
     </div>
     <!-- <div id="site-description"><?php bloginfo( 'description' ); ?></div>  -->
     <h1>My website is as sparadic as my mind</h1>
-    <style>
-        .button {
-            -webkit-filter: url("#filter");
-            filter: url("/#filter");
-        }
-    </style>
-    <button>Click ME</button>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters">
-        <defs>
-            <filter id="filter">
-                <feTurbulence type="fractalNoise" baseFrequency="0 0.15" numOctaves="1" result="warp" />
-                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
-            </filter>
-        </defs>
-    </svg>
-    <script>
-        
-    </script>
 </section>
 <?php
 get_sidebar();
