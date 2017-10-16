@@ -168,11 +168,11 @@ section {
     text-transform: uppercase;
     font-size:20px;
 }
-#animated-menu ul > li > a:nth-child(even) {
+#animated-menu ul > li:nth-child(even) {
     -webkit-filter: url("#filter");
     filter: url("#filter");
 }
-#animated-menu ul > li > a:nth-child(odd) {
+#animated-menu ul > li >:nth-child(odd) {
     -webkit-filter: url("#filter2");
     filter: url("#filter2");
 }
