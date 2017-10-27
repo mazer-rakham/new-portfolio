@@ -161,18 +161,34 @@ section {
 }
 #filter, #filter2 {
     position:absolute;
+    z-index:2;
 }
 #animated-menu ul > li > a {
     font-family: 'Pangolin', cursive;
     color:black;
     text-transform: uppercase;
     font-size:20px;
+    position:relative;
+    z-index:9999;
 }
-#animated-menu ul > li:nth-child(even) {
+#animated-menu ul > li a:nth-child(even) {
     -webkit-filter: url("#filter");
     filter: url("#filter");
 }
-#animated-menu ul > li >:nth-child(odd) {
+#animated-menu ul > li > a:nth-child(odd) {
     -webkit-filter: url("#filter2");
     filter: url("#filter2");
+}
+#container {
+    position: relative;
+    z-index:500;
+}
+#svg8 {
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    opacity:0.1;
+    z-index:1;
 }
