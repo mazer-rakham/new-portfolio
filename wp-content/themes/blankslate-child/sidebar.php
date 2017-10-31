@@ -6,4 +6,5 @@
             </ul>
         </div>
     <?php endif; ?>
+    <h4 id="slide-out-menu-tag">MENU</h4>
 </aside>

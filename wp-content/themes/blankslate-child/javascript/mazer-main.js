@@ -1,6 +1,7 @@
 TweenMax.set('#svg8 path',{drawSVG:0});
 TweenMax.set('#svg8 rect',{drawSVG:0});
 TweenMax.set('#svg8 circle',{drawSVG:0});
+
 jQuery(document).ready(function () {
     var turbVal = { val: 0.000001 };
     var turb = jQuery('#filter feTurbulence')[0];
@@ -31,9 +32,17 @@ jQuery(document).ready(function () {
     setInterval(function () {
         btTl2.restart();
     }, 2500);
-    
+    function asideSlideOut(){
+        TweenMax.to('#sidebar',0.5,{left:'0px'});
+        TweenMax.to('#whole-main-content-wrapper',0.5,{x:'200px'});
+    }
+    function asideSlideIn(){
+        TweenMax.to('#sidebar',0.5,{left:'-200px'});
+        TweenMax.to('#whole-main-content-wrapper',0.5,{x:'0px'});
+    }
     jQuery(window).mousemove(function(){
         var x = event.clientX;
+
         var absX = Math.abs(x);
         var sqrtX = Math.sqrt(absX) + 20;
     
@@ -47,5 +56,11 @@ jQuery(document).ready(function () {
         TweenMax.set('#svg8 path',{drawSVG:testX +"%" +" " + testY + "%"});
         TweenMax.set('#svg8 rect',{drawSVG:testX +"%" +" " + testY + "%"});
         TweenMax.set('#svg8 circle',{drawSVG:testX +"%" +" " + testY + "%"});
+        if(x <= 50){
+            asideSlideOut();
+        }
+        if(x >= 250){
+            asideSlideIn();
+        }
     });
 });

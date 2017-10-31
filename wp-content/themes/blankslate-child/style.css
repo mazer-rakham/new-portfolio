@@ -95,7 +95,8 @@ video {
 }
 
 body {
-    line-height: 1
+    line-height: 1;
+    overflow-x: hidden;
 }
 
 ol,
@@ -191,4 +192,33 @@ section {
     left:0;
     opacity:0.1;
     z-index:1;
+}
+#animated-menu ul li {
+    display: inline-block;
+}
+#animated-menu {
+    text-align: center;
+}
+#sidebar {
+    padding-top:50px;
+    background-color:black;
+    z-index: 99999;
+    position: fixed;
+    top:0;
+    left:-200px;
+    width:250px;
+    height:100%;
+    overflow-y: auto;
+}
+#whole-main-content-wrapper {
+    padding:0 60px;
+    position: relative;
+    z-index: 500;
+}
+#slide-out-menu-tag {
+    position: absolute;
+    right:0;
+    color:white;
+    transform: rotate(90deg);
+    top:50%;
 }

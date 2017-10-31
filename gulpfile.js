@@ -37,6 +37,6 @@ gulp.task('browser-sync', ['php'], function () {
 // }))
 // });
 gulp.task('app', ['browser-sync'], function () {
-    gulp.watch(['wp-content/themes/blankslate-child/**/*.css'], [reload]);
-    gulp.watch(['wp-content/themes/blankslate-child/**/*.php'], [reload]);
+    gulp.watch(['wp-content/themes/blankslate-child/*.css'], [reload]);
+    gulp.watch(['wp-content/themes/blankslate-child/*.php'], [reload]);
 });

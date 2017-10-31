@@ -6,9 +6,7 @@ get_header('secondary'); ?>
 
 
 <div class="container-fluid">
-    <div class="row">
-        <img src="<?php echo mazer_image_path; ?>/thomas-flock-logo.png" class="img-responsive center-block" />
-    </div>
+  
 </div>
 <section id="branding">
     <div id="site-title">
@@ -66,5 +64,5 @@ get_header('secondary'); ?>
     endif; ?>
 
 <?php
-get_sidebar();
+
 get_footer(); ?>
