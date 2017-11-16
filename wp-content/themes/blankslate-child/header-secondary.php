@@ -13,9 +13,9 @@
     <div id="whole-main-content-wrapper">
         <div id="wrapper" class="hfeed container-fluid">
             <header id="header" role="banner">
-                <div class="row">
+                <!-- <div class="row">
                     <img src="<?php echo mazer_image_path; ?>/thomas-flock-logo.png" class="img-responsive center-block" />
-                </div>
+                </div> -->
                 <nav id="menu" role="navigation">
                     <?php
                 wp_nav_menu(array(
