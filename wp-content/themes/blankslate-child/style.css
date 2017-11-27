@@ -238,3 +238,8 @@ section {
     transform: rotate(90deg);
     top:50%;
 }
+.hobby1, .hobby2, .hobby3, .hobby4, .hobby5 {
+    position: absolute;
+    z-index:99999;
+    opacity:0;
+}
