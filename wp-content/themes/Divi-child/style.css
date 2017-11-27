@@ -10,4 +10,40 @@ Version: 3.0.89.1511226712
 Updated: 2017-11-21 01:11:52
 
 */
-
+/*
+Fonts from google
+font-family: 'Indie Flower', cursive;
+font-family: 'Amatic SC', cursive;
+font-family: 'Poiret One', cursive;
+font-family: 'Bigelow Rules', cursive;
+font-family: 'Berkshire Swash', cursive;
+font-family: 'Neucha', cursive;
+font-family: 'Cabin Sketch', cursive;
+font-family: 'Homemade Apple', cursive;
+font-family: 'Rock Salt', cursive;
+font-family: 'Freckle Face', cursive;
+font-family: 'Love Ya Like A Sister', cursive;
+font-family: 'Zilla Slab Highlight', cursive;
+font-family: 'Bungee Shade', cursive;
+font-family: 'Give You Glory', cursive;
+font-family: 'Crushed', cursive;
+*/
+.hobby3 video {
+    max-width:400px;
+    height: auto;
+}
+#work-all-the-time {
+    opacity: 0;
+}
+#main-intro-module h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size:7vw;
+}
+#main-intro-module p:last-child {
+    font-family: 'Indie Flower', cursive;
+    font-size: 5vw;
+    margin-top:20px;
+}
+#always-under-construction {
+    font-family: 'Neucha', cursive;
+}
