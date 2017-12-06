@@ -36,11 +36,6 @@
 
 <body id="main-index-template-body" <?php body_class(); ?>>
 	<div id="et-main-area">
-		<div id="test-div">
-			<a href="#" id="test1">Test1</a>
-			<a href="#" id="test2">Test2</a>
-			<a href="#" id="test3">Test3</a>
-			<a href="#" id="test4">Test4</a>
-			<a href="#" id="test5">Test5</a>
+		<div id="test-div">			
 			<a href="#" id="goHome">Home</a>			
 		</div>

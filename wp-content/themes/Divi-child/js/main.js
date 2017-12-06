@@ -142,10 +142,10 @@ function returnArticle5() {
 }
 
 function removeHomePanel() {
-    TweenMax.to('#article6',0.5, {
+    TweenMax.to('#article6', 0.5, {
         rotationX: '180deg',
-        z: -300,
-        opacity: 0.3
+        z: -1500,
+        autoAlpha: 0
     });
 }
 
@@ -157,10 +157,88 @@ function articleHeight() {
 
 
 jQuery(document).ready(function () {
+    jQuery(function () {
+
+        var $slides = jQuery(".recent-posts-wrapper-main");
+        var currentSlide = 0;
+        var stayTime = 4;
+        var slideTime = 1.5;
+        var numberOfSlides = $slides.length - 1;
+
+        TweenLite.set($slides.filter(":gt(0)"), {
+            autoAlpha:0
+        });
+        TweenLite.delayedCall(stayTime, nextSlide);
+
+        function nextSlide() {
+            TweenLite.to($slides.eq(currentSlide), slideTime, {
+                autoAlpha:0
+            });
+            currentSlide = ++currentSlide % $slides.length;
+            TweenLite.to($slides.eq(currentSlide), slideTime, {
+                autoAlpha:1
+            });
+            TweenLite.delayedCall(stayTime, nextSlide);
+        }
+
+        jQuery('#next-blog-post').click(function () {
+           
+            TweenLite.to($slides.eq(currentSlide), slideTime, {
+                autoAlpha:0
+            });
+            currentSlide = ++currentSlide % $slides.length;
+            TweenLite.to($slides.eq(currentSlide), slideTime, {
+                autoAlpha:1
+            });
+        });
+
+        jQuery('#previous-blog-post').click(function () {
+            
+            TweenLite.to($slides.eq(currentSlide), slideTime, {
+                autoAlpha:0
+            });
+            currentSlide = --currentSlide % $slides.length;
+            TweenLite.to($slides.eq(currentSlide), slideTime, {
+                autoAlpha:1
+            });
+        });
+        jQuery('.recent-posts-wrapper-main').mouseenter(function () {
+            TweenLite.killDelayedCallsTo(nextSlide);
+        });
+        jQuery('.recent-posts-wrapper-main').mouseleave(function () {
+            TweenLite.delayedCall(stayTime, nextSlide);
+        });
+
+        for (i = -1; i < numberOfSlides; i++) {
+            (function () {
+                var slideIndex = i;
+                var slideLabel = i + 1;
+                var x = jQuery('<a id="slide' + slideLabel + '"href="#" class="paginatorLink">' + '<i class="material-icons">brightness_1</i>' + '</a>');
+                x.click(function () {
+
+
+
+                    TweenLite.killDelayedCallsTo(nextSlide);
+                    TweenLite.to($slides.eq(currentSlide), slideTime, {
+                        opacity: 0,
+                        display: 'none'
+                    });
+                    currentSlide = slideLabel;
+                    TweenLite.to($slides.eq(currentSlide), slideTime, {
+                        opacity: 1,
+                        display: 'block'
+                    });
+
+
+                });
+                jQuery('.pagination').append(x);
+            })();
+        }
+
+    });
     articleHeight();
 
-
-    jQuery('#test1').click(function () {
+    jQuery('#main-hacker').click(function () {
         returnArticle2();
         returnArticle3();
         returnArticle4();
@@ -172,7 +250,7 @@ jQuery(document).ready(function () {
             autoAlpha: 1
         });
     });
-    jQuery('#test2').click(function () {
+    jQuery('#main-about').click(function () {
         returnArticle1();
         returnArticle3();
         returnArticle4();
@@ -184,7 +262,7 @@ jQuery(document).ready(function () {
             autoAlpha: 1
         });
     });
-    jQuery('#test3').click(function () {
+    jQuery('#main-skills').click(function () {
         returnArticle1();
         returnArticle2();
         returnArticle4();
@@ -196,7 +274,7 @@ jQuery(document).ready(function () {
             autoAlpha: 1
         });
     });
-    jQuery('#test4').click(function () {
+    jQuery('#main-hobbies').click(function () {
         returnArticle1();
         returnArticle2();
         returnArticle3();
@@ -208,7 +286,7 @@ jQuery(document).ready(function () {
             autoAlpha: 1
         });
     });
-    jQuery('#test5').click(function () {
+    jQuery('#main-come-find-me').click(function () {
         returnArticle1();
         returnArticle2();
         returnArticle3();
@@ -228,7 +306,7 @@ jQuery(document).ready(function () {
         TweenMax.to('#article6', 0.5, {
             rotationX: '0deg',
             z: 0,
-            opacity:1
+            autoAlpha: 1
         });
     });
 

@@ -30,9 +30,11 @@ font-family: 'Bungee Shade', cursive;
 font-family: 'Give You Glory', cursive;
 font-family: 'Crushed', cursive;
 */
+
 #main-index-template-body {
     overflow: hidden;
 }
+
 .hobby3 video {
     max-width: 400px;
     height: auto;
@@ -52,35 +54,77 @@ font-family: 'Crushed', cursive;
     font-size: 5vw;
     margin-top: 20px;
 }
+
 #test-div {
-    position:fixed;
-    top:30px;
-    left:0;
-    z-index:99999;
+    position: fixed;
+    top: 30px;
+    left: 0;
+    z-index: 99999;
 }
+
 #always-under-construction {
     font-family: 'Neucha', cursive;
 }
+.recent-posts-wrapper-main {
+    width:70%;
+    position:absolute;
+    transform:translate(-50%, -50%);
+    left:50%;
+}
+#next-blog-post, #previous-blog-post {
+    position:absolute;
+    top:-30px;
+}
+#next-blog-post {
+    right:0;
+}
 #main-article-wrapper {
-    position:relative;
-    width:100%;
-    height:100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
     perspective: 1000px;
 }
-#article1, #article2, #article3, #article4, #article5, #article6 {
+#blog-previews {
+    width:100%;
+    position:relative;
+}
+#article1,
+#article2,
+#article3,
+#article4,
+#article5,
+#article6 {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: wrap;
 }
-#welcomeLeft, #welcomeRight {
-    width:50%;
+#blog-previews {
+    flex:100%;
+}
+#article6 h1 {
+    flex:100%;
+}
+#welcomeLeft,
+#welcomeRight {
+   flex:50%;
     box-sizing: border-box;
 }
+
 #welcomeLeft {
-   padding-right:10px;
+    padding-right: 10px;
     text-align: right;
 }
+
 #welcomeRight {
-    padding-left:10px;
-    border-left:5px solid black;
+    padding-left: 10px;
+    border-left: 5px solid black;
+}
+
+#main-hacker,
+#main-about,
+#main-skills,
+#main-hobbies,
+#main-come-find-me {
+    cursor: crosshair;
 }
