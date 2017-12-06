@@ -13,6 +13,7 @@ if ( !function_exists( 'chld_thm_cfg_parent_css' ) ):
         wp_enqueue_script('scrollmagic', get_stylesheet_directory_uri() . '/js/ScrollMagic.min.js','',1.1,true);
         wp_enqueue_script('gsap-sm-animation', get_stylesheet_directory_uri() . '/js/plugins/animation.gsap.min.js','',1.1,true);
         wp_enqueue_script('debug-scroll-magic', get_stylesheet_directory_uri() . '/js/plugins/debug.addIndicators.min.js',array('jquery'),1.1,true);
+        // wp_enqueue_script('matter-js', get_stylesheet_directory_uri() . '/js/matter.min.js','',1.1,true);
         wp_enqueue_script('main-javascript', get_stylesheet_directory_uri() . '/js/main.js',array('jquery'),1.1,true);
     }
 endif;
