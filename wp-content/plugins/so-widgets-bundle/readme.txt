@@ -2,8 +2,8 @@
 Tags: bundle, widget, button, slider, image, carousel, price table, google maps, tinymce, social links
 Requires at least: 4.2
 Tested up to: 4.9
-Stable tag: 1.11.1
-Build time: 2017-11-24T15:23:28+02:00
+Stable tag: 1.11.2
+Build time: 2017-11-27T16:49:12+02:00
 License: GPLv3 or later
 Contributors: gpriday, braam-genis
 Donate link: https://siteorigin.com/downloads/contribution/
@@ -53,6 +53,10 @@ The SiteOrigin Widgets Bundle is the perfect platform to build widgets for your 
 3. An example of the button widget.
 
 == Changelog ==
+
+= 1.11.2 - 27 November 2017 =
+* Fix compatibility with Beaver Builder Lite.
+* Tabs: Recalculate height on resize.
 
 = 1.11.1 - 24 November 2017 =
 * Hero: Allow for shortcodes to work.
