@@ -65,42 +65,172 @@ var smController = new ScrollMagic.Controller();
 // .setTween(hobbyTimeline)
 
 // .addTo(smController);
-TweenMax.set('.fullHeight',{position:'absolute',width:"100%"});
-TweenMax.set('#article1',{left:'50%',rotation:'60deg',autoAlpha:0});
-function returnArticle1(){
-    TweenMax.to('#article1',0.5,{left:'50%',rotation:'60deg',autoAlpha:0});
+TweenMax.set('.fullHeight', {
+    position: 'absolute',
+    width: "100%"
+});
+
+//set position for article1 and its return
+TweenMax.set('#article1', {
+    left: '50%',
+    rotation: '60deg',
+    autoAlpha: 0
+});
+
+function returnArticle1() {
+    TweenMax.to('#article1', 0.5, {
+        left: '50%',
+        rotation: '60deg',
+        autoAlpha: 0
+    });
 }
 
 
 // setting the position for article 2 and its return
+TweenMax.set('#article2', {
+    left: '-50%',
+    rotation: '180deg',
+    autoAlpha: 0
+});
 
-TweenMax.set('#article2',{left:'-50%',rotation:'180deg',autoAlpha:0});
-function returnArticle2(){
-    TweenMax.to('#article2',0.5,{left:'-50%',rotation:'180deg',autoAlpha:0});
+function returnArticle2() {
+    TweenMax.to('#article2', 0.5, {
+        left: '-50%',
+        rotation: '180deg',
+        autoAlpha: 0
+    });
+}
+//   set position for article 3 and it's return
+TweenMax.set('#article3', {
+    rotationX: '90deg',
+    autoAlpha: 0
+});
+
+function returnArticle3() {
+    TweenMax.to('#article3', 0.5, {
+        rotationX: '90deg',
+        autoAlpha: 0
+    });
+}
+
+// set position for artice 4 and return
+TweenMax.set('#article4', {
+    rotationY: '90deg',
+    left: '50%',
+    transformOrigin: "0% 100%",
+    autoAlpha: 0
+});
+
+function returnArticle4() {
+    TweenMax.to('#article4', 0.5, {
+        rotationY: '90deg',
+        left: '50%',
+        autoAlpha: 0
+    });
+}
+// set position article 5 and return
+TweenMax.set('#article5', {
+    top: '-100%',
+    autoAlpha: 0
+});
+
+function returnArticle5() {
+    TweenMax.to('#article5', 0.5, {
+        top: '-100%',
+        autoAlpha: 0
+    });
+}
+
+function removeHomePanel() {
+    TweenMax.to('#article6',0.5, {
+        rotationX: '180deg',
+        z: -300,
+        opacity: 0.3
+    });
 }
 
 
-
-
-function articleHeight(){
-	var windowHeight = jQuery(window).height();
-	jQuery('.fullHeight').css('min-height', windowHeight + 'px');
+function articleHeight() {
+    var windowHeight = jQuery(window).height();
+    jQuery('.fullHeight').css('min-height', windowHeight + 'px');
 };
 
 
-jQuery(document).ready(function(){
+jQuery(document).ready(function () {
     articleHeight();
 
 
-    jQuery('#test1').click(function(){
-        returnArticle2()
-        TweenMax.to('#article1',0.5,{left:'0%',rotation:'0deg',autoAlpha:1});
+    jQuery('#test1').click(function () {
+        returnArticle2();
+        returnArticle3();
+        returnArticle4();
+        returnArticle5();
+        removeHomePanel();
+        TweenMax.to('#article1', 0.5, {
+            left: '0%',
+            rotation: '0deg',
+            autoAlpha: 1
+        });
     });
-    jQuery('#test2').click(function(){
+    jQuery('#test2').click(function () {
         returnArticle1();
-        TweenMax.to('#article2',0.5,{left:'0%',rotation:'0deg',autoAlpha:1});
+        returnArticle3();
+        returnArticle4();
+        returnArticle5();
+        removeHomePanel();
+        TweenMax.to('#article2', 0.5, {
+            left: '0%',
+            rotation: '0deg',
+            autoAlpha: 1
+        });
     });
-
+    jQuery('#test3').click(function () {
+        returnArticle1();
+        returnArticle2();
+        returnArticle4();
+        returnArticle5();
+        removeHomePanel();
+        TweenMax.to('#article3', 0.5, {
+            left: '0%',
+            rotationX: '0deg',
+            autoAlpha: 1
+        });
+    });
+    jQuery('#test4').click(function () {
+        returnArticle1();
+        returnArticle2();
+        returnArticle3();
+        returnArticle5();
+        removeHomePanel();
+        TweenMax.to('#article4', 0.5, {
+            left: '0%',
+            rotationY: '0deg',
+            autoAlpha: 1
+        });
+    });
+    jQuery('#test5').click(function () {
+        returnArticle1();
+        returnArticle2();
+        returnArticle3();
+        returnArticle4();
+        removeHomePanel();
+        TweenMax.to('#article5', 0.5, {
+            top: '0%',
+            autoAlpha: 1
+        });
+    });
+    jQuery('#goHome').click(function () {
+        returnArticle1();
+        returnArticle2();
+        returnArticle3();
+        returnArticle4();
+        returnArticle5();
+        TweenMax.to('#article6', 0.5, {
+            rotationX: '0deg',
+            z: 0,
+            opacity:1
+        });
+    });
 
 });
 jQuery(window).resize(articleHeight);

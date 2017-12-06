@@ -42,4 +42,5 @@
 			<a href="#" id="test3">Test3</a>
 			<a href="#" id="test4">Test4</a>
 			<a href="#" id="test5">Test5</a>
+			<a href="#" id="goHome">Home</a>			
 		</div>
