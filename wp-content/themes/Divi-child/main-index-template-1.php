@@ -4,18 +4,17 @@ get_header('index');
 ?>
 <div id="main-article-wrapper" class="fullHeight">
     <article class="fullHeight" id="article1">
-        <h1>HAcker</h1>
-
+       <?php require('hacker.php'); ?>
     </article>
     <article class="fullHeight" id="article2">
-        <h1>About</h1>
+    <?php require('about-this-guy.php'); ?>
     </article>
     <article class="fullHeight" id="article3">
-        <h1>Skills</h1>
+    <?php require('my-skills.php'); ?>
     </article>
 
     <article class="fullHeight" id="article4">
-        <h1>Hobbies</h1>
+       <?php  require('fun-hobby-time.php');       ?>
     </article>
 
     <article class="fullHeight" id="article5">
@@ -23,29 +22,17 @@ get_header('index');
     </article>
 
     <article class="fullHeight" id="article6">
-       <h1>Welcome to..</h1>
+        <h1>Welcome to..</h1>
         <div id="welcomeLeft">
             <h1>to the portfolio of a hacker.</h1>
         </div>
-        <div id="welcomeRight">
-            <a href="#" id="main-hacker">
-                <p>Hacker?</p>
-            </a>
-            <a href="#" id="main-about">
-                <p>About</p>
-            </a>
-            <a href="#" id="main-skills">
-                <p>Skills</p>
-            </a>
-            <a href="#" id="main-hobbies">
-                <p>Hobbies</p>
-            </a>
-            <a href="#" id="main-come-find-me">
-                <p>Where to find me</p>
-            </a>
+        <div id="welcomeRight">           
+            <?php require('main-template-navigation.php'); ?>
         </div>
         <div id="blog-previews">
-            <a href="#" id="previous-blog-post"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/leftChevron.png" alt=""></a>
+            <a href="#" id="previous-blog-post">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/leftChevron.png" alt="">
+            </a>
             <?php
             $recent_posts = wp_get_recent_posts();
             foreach ($recent_posts as $recent) {
@@ -53,7 +40,9 @@ get_header('index');
             }
             wp_reset_query();
             ?>
-            <a href="#" id="next-blog-post"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rightChevron.png" alt="" ></a>
+                <a href="#" id="next-blog-post">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rightChevron.png" alt="">
+                </a>
         </div>
     </article>
 </div>

@@ -32,7 +32,8 @@ font-family: 'Crushed', cursive;
 */
 
 #main-index-template-body {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .hobby3 video {
@@ -73,7 +74,7 @@ font-family: 'Crushed', cursive;
 }
 #next-blog-post, #previous-blog-post {
     position:absolute;
-    top:-30px;
+    bottom:30px;
 }
 #next-blog-post {
     right:0;
@@ -88,9 +89,74 @@ font-family: 'Crushed', cursive;
     width:100%;
     position:relative;
 }
-#article1,
+#article1 .navigation-wrapper {
+    position:absolute;
+    bottom: 20px;
+}
+#article1 .navigation-wrapper a {
+    display: inline-block;
+    color:black;
+    margin:0 15px;
+}
+#hammer-time-wrapper {
+    position: absolute;
+    right:0;
+}
+#article4 {
+   
+}
+#main-article-wrapper {
+    
+}
+#hobby-scene-wrapper {
+    width: 300%;
+    border: 3px solid red;
+    position:absolute;
+}
+#skills-graphic-wrapper span {
+    width:20px;
+    height:20px;
+    border:2px solid #595959;
+    display: inline-block;
+    border-radius: 50%;
+}
+#htmlSkills span:nth-child(-n+14) {
+    background-color: #80bfff;
+}
+#cssSkills span:nth-child(-n+13) {
+    background-color: #80bfff;
+}
+#jsSkills span:nth-child(-n+11) {
+    background-color: #80bfff;
+}
+#phpSkills span:nth-child(-n+10) {
+    background-color: #80bfff;
+}
+#sqlSkills span:nth-child(-n+9) {
+    background-color: #80bfff;
+}
+#jquerySkills span:nth-child(-n+12) {
+    background-color: #80bfff;
+}
+#gsapSkills span:nth-child(-n+8) {
+    background-color: #80bfff;
+}
+#bootstrapSkills span {
+    background-color: #80bfff;
+}
+#mongoSkills span:nth-child(-n+7) {
+    background-color: #80bfff;
+}
+#gimpSkills span:nth-child(-n+9) {
+    background-color: #80bfff;
+}
+#illustratorSkills span:nth-child(-n+8) {
+    background-color: #80bfff;
+}
+#inkscapeSkills span:nth-child(-n+7) {
+    background-color: #80bfff;
+}
 #article2,
-#article3,
 #article4,
 #article5,
 #article6 {
@@ -121,10 +187,10 @@ font-family: 'Crushed', cursive;
     border-left: 5px solid black;
 }
 
-#main-hacker,
-#main-about,
-#main-skills,
-#main-hobbies,
-#main-come-find-me {
+.main-hacker,
+.main-about,
+.main-skills,
+.main-hobbies,
+.main-come-find-me {
     cursor: crosshair;
 }

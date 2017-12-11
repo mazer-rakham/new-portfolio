@@ -37,5 +37,5 @@
 <body id="main-index-template-body" <?php body_class(); ?>>
 	<div id="et-main-area">
 		<div id="test-div">			
-			<a href="#" id="goHome">Home</a>			
+			<a href="#" class="goHome">Home</a>			
 		</div>
