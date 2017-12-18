@@ -4,7 +4,9 @@
 //     });
 // }
 // setXcoords();
-var horizontalController = new ScrollMagic.Controller({vertical:false});
+var horizontalController = new ScrollMagic.Controller({
+    vertical: false
+});
 
 // function createSkullSCene() {
 //     return new ScrollMagic.Scene({
@@ -66,12 +68,15 @@ var horizontalController = new ScrollMagic.Controller({vertical:false});
 
 // .addTo(smController);
 var hobbyFunTime = new ScrollMagic.Scene({
-    triggerElement: '#hobby-scene-wrapper',
-    triggerHook:0
-})
-.setTween('#hobby-scene-wrapper',1,{y:-100})
-.addIndicators()
-.addTo(horizontalController);
+        triggerElement: '#hobby-scene-wrapper',
+        triggerHook: 0,
+        duration: 600
+    })
+    .setTween('', 1, {
+        rotation: '180deg'
+    })
+    .addIndicators()
+    .addTo(horizontalController);
 
 
 TweenMax.set('.fullHeight', {
@@ -92,8 +97,8 @@ function returnArticle1() {
         rotation: '60deg',
         autoAlpha: 0
     });
-    jQuery('#main-index-template-body').css('overflow-y','hidden');
-    jQuery('#main-index-template-body').css('overflow-x','hidden');
+    jQuery('#main-index-template-body').css('overflow-y', 'hidden');
+    jQuery('#main-index-template-body').css('overflow-x', 'hidden');
 }
 
 
@@ -110,8 +115,8 @@ function returnArticle2() {
         rotation: '180deg',
         autoAlpha: 0
     });
-    jQuery('#main-index-template-body').css('overflow-y','hidden');
-    jQuery('#main-index-template-body').css('overflow-x','hidden');
+    jQuery('#main-index-template-body').css('overflow-y', 'hidden');
+    jQuery('#main-index-template-body').css('overflow-x', 'hidden');
 }
 //   set position for article 3 and it's return
 TweenMax.set('#article3', {
@@ -124,8 +129,8 @@ function returnArticle3() {
         rotationX: '90deg',
         autoAlpha: 0
     });
-    jQuery('#main-index-template-body').css('overflow-y','hidden');
-    jQuery('#main-index-template-body').css('overflow-x','hidden');
+    jQuery('#main-index-template-body').css('overflow-y', 'hidden');
+    jQuery('#main-index-template-body').css('overflow-x', 'hidden');
 }
 
 // set position for artice 4 and return
@@ -142,8 +147,8 @@ function returnArticle4() {
         left: '50%',
         autoAlpha: 0
     });
-    jQuery('#main-index-template-body').css('overflow-y','hidden');
-    jQuery('#main-index-template-body').css('overflow-x','hidden');
+    jQuery('#main-index-template-body').css('overflow-y', 'hidden');
+    jQuery('#main-index-template-body').css('overflow-x', 'hidden');
 }
 // set position article 5 and return
 TweenMax.set('#article5', {
@@ -156,8 +161,8 @@ function returnArticle5() {
         top: '-100%',
         autoAlpha: 0
     });
-    jQuery('#main-index-template-body').css('overflow-y','hidden');
-    jQuery('#main-index-template-body').css('overflow-x','hidden');
+    jQuery('#main-index-template-body').css('overflow-y', 'hidden');
+    jQuery('#main-index-template-body').css('overflow-x', 'hidden');
 }
 
 function removeHomePanel() {
@@ -189,40 +194,40 @@ jQuery(document).ready(function () {
         var numberOfSlides = $slides.length - 1;
 
         TweenLite.set($slides.filter(":gt(0)"), {
-            autoAlpha:0
+            autoAlpha: 0
         });
         TweenLite.delayedCall(stayTime, nextSlide);
 
         function nextSlide() {
             TweenLite.to($slides.eq(currentSlide), slideTime, {
-                autoAlpha:0
+                autoAlpha: 0
             });
             currentSlide = ++currentSlide % $slides.length;
             TweenLite.to($slides.eq(currentSlide), slideTime, {
-                autoAlpha:1
+                autoAlpha: 1
             });
             TweenLite.delayedCall(stayTime, nextSlide);
         }
 
         jQuery('#next-blog-post').click(function () {
-           
+
             TweenLite.to($slides.eq(currentSlide), slideTime, {
-                autoAlpha:0
+                autoAlpha: 0
             });
             currentSlide = ++currentSlide % $slides.length;
             TweenLite.to($slides.eq(currentSlide), slideTime, {
-                autoAlpha:1
+                autoAlpha: 1
             });
         });
 
         jQuery('#previous-blog-post').click(function () {
-            
+
             TweenLite.to($slides.eq(currentSlide), slideTime, {
-                autoAlpha:0
+                autoAlpha: 0
             });
             currentSlide = --currentSlide % $slides.length;
             TweenLite.to($slides.eq(currentSlide), slideTime, {
-                autoAlpha:1
+                autoAlpha: 1
             });
         });
         jQuery('.recent-posts-wrapper-main').mouseenter(function () {
@@ -261,8 +266,8 @@ jQuery(document).ready(function () {
     });
     // end of recent posts
 
-    
-// the menu navigation animations   --------------------------------------------------------
+
+    // the menu navigation animations   --------------------------------------------------------
     jQuery('.main-hacker').click(function () {
         returnArticle2();
         returnArticle3();
@@ -298,7 +303,7 @@ jQuery(document).ready(function () {
             rotationX: '0deg',
             autoAlpha: 1
         });
-        jQuery('#main-index-template-body').css('overflow-y','auto');
+        jQuery('#main-index-template-body').css('overflow-y', 'auto');
     });
     jQuery('.main-hobbies').click(function () {
         returnArticle1();
@@ -311,7 +316,7 @@ jQuery(document).ready(function () {
             rotationY: '0deg',
             autoAlpha: 1
         });
-        jQuery('#main-index-template-body').css('overflow-x','auto');
+        jQuery('#main-index-template-body').css('overflow-x', 'auto');
     });
     jQuery('.main-come-find-me').click(function () {
         returnArticle1();
@@ -340,46 +345,307 @@ jQuery(document).ready(function () {
     // end of menu navigation 
     // animations in the skills area ------------------------------------------------------------
 
-    var htmlTL = new TimelineMax({delay:0.5, repeat: -1, repeatDelay:5 })
-                .staggerTo('#htmlSkills span:nth-child(-n+14)',0.05,{y:-5,boxShadow:' 2px 2px 5px 0px rgba(0,0,0,0.75)'},0.05,"bounce1")
-                .staggerTo('#htmlSkills span:nth-child(-n+14)',0.05,{y:0,boxShadow:'none', delay:0.05},0.05,"bounce1");
-    var cssTL = new TimelineMax({delay:1, repeat: -1, repeatDelay:3 })
-                .staggerTo('#cssSkills span:nth-child(-n+13)',0.05,{y:-5,boxShadow:' 2px 2px 5px 0px rgba(0,0,0,0.75)'},0.05,"bounce1")
-                .staggerTo('#cssSkills span:nth-child(-n+13)',0.05,{y:0,boxShadow:'none', delay:0.05},0.05,"bounce1");
-    var jsTL = new TimelineMax({ repeat: -1, repeatDelay:4 })
-                .staggerTo('#jsSkills span:nth-child(-n+11)',0.05,{y:-5,boxShadow:' 2px 2px 5px 0px rgba(0,0,0,0.75)'},0.05,"bounce1")
-                .staggerTo('#jsSkills span:nth-child(-n+11)',0.05,{y:0,boxShadow:'none', delay:0.05},0.05,"bounce1");
-    var phpTL = new TimelineMax({delay:2, repeat: -1, repeatDelay:1 })
-                .staggerTo('#phpSkills span:nth-child(-n+10)',0.05,{y:-5,boxShadow:' 2px 2px 5px 0px rgba(0,0,0,0.75)'},0.05,"bounce1")
-                .staggerTo('#phpSkills span:nth-child(-n+10)',0.05,{y:0,boxShadow:'none', delay:0.05},0.05,"bounce1");
-    var sqlTL = new TimelineMax({delay:0.5, repeat: -1, repeatDelay:5 })
-                .staggerTo('#sqlSkills span:nth-child(-n+9)',0.05,{y:-5,boxShadow:' 2px 2px 5px 0px rgba(0,0,0,0.75)'},0.05,"bounce1")
-                .staggerTo('#sqlSkills span:nth-child(-n+9)',0.05,{y:0,boxShadow:'none', delay:0.05},0.05,"bounce1");
-    var jqueryTL = new TimelineMax({delay:0.5, repeat: -1, repeatDelay:5 })
-                .staggerTo('#jquerySkills span:nth-child(-n+12)',0.05,{y:-5,boxShadow:' 2px 2px 5px 0px rgba(0,0,0,0.75)'},0.05,"bounce1")
-                .staggerTo('#jquerySkills span:nth-child(-n+12)',0.05,{y:0,boxShadow:'none', delay:0.05},0.05,"bounce1");
-    var gsapTL = new TimelineMax({delay:0.5, repeat: -1, repeatDelay:5 })
-                .staggerTo('#gsapSkills span:nth-child(-n+8)',0.05,{y:-5,boxShadow:' 2px 2px 5px 0px rgba(0,0,0,0.75)'},0.05,"bounce1")
-                .staggerTo('#gsapSkills span:nth-child(-n+8)',0.05,{y:0,boxShadow:'none', delay:0.05},0.05,"bounce1");
-    var bootstrapTL = new TimelineMax({delay:0.5, repeat: -1, repeatDelay:5 })
-                .staggerTo('#bootstrapSkills span',0.05,{y:-5,boxShadow:' 2px 2px 5px 0px rgba(0,0,0,0.75)'},0.05,"bounce1")
-                .staggerTo('#bootstrapSkills span',0.05,{y:0,boxShadow:'none', delay:0.05},0.05,"bounce1");
-    var mongoTL = new TimelineMax({delay:0.5, repeat: -1, repeatDelay:5 })
-                .staggerTo('#mongoSkills span:nth-child(-n+7)',0.05,{y:-5,boxShadow:' 2px 2px 5px 0px rgba(0,0,0,0.75)'},0.05,"bounce1")
-                .staggerTo('#mongoSkills span:nth-child(-n+7)',0.05,{y:0,boxShadow:'none', delay:0.05},0.05,"bounce1");
-    var gimpTL = new TimelineMax({delay:0.7, repeat: -1, repeatDelay:2 })
-                .staggerTo('#gimpSkills span:nth-child(-n+9)',0.05,{y:-5,boxShadow:' 2px 2px 5px 0px rgba(0,0,0,0.75)'},0.05,"bounce1")
-                .staggerTo('#gimpSkills span:nth-child(-n+9)',0.05,{y:0,boxShadow:'none', delay:0.05},0.05,"bounce1");
-    var illustratorTL = new TimelineMax({delay:0.5, repeat: -1, repeatDelay:2 })
-                .staggerTo('#illustratorSkills span:nth-child(-n+8)',0.05,{y:-5,boxShadow:' 2px 2px 5px 0px rgba(0,0,0,0.75)'},0.05,"bounce1")
-                .staggerTo('#illustratorSkills span:nth-child(-n+8)',0.05,{y:0,boxShadow:'none', delay:0.05},0.05,"bounce1");
-    var inkscapeTL = new TimelineMax({delay:0.1, repeat: -1, repeatDelay:4 })
-                .staggerTo('#inkscapeSkills span:nth-child(-n+7)',0.05,{y:-5,boxShadow:' 2px 2px 5px 0px rgba(0,0,0,0.75)'},0.05,"bounce1")
-                .staggerTo('#inkscapeSkills span:nth-child(-n+7)',0.05,{y:0,boxShadow:'none', delay:0.05},0.05,"bounce1");
+    var htmlTL = new TimelineMax({
+            delay: 0.5,
+            repeat: -1,
+            repeatDelay: 5
+        })
+        .staggerTo('#htmlSkills span:nth-child(-n+14)', 0.05, {
+            y: -5,
+            boxShadow: ' 2px 2px 5px 0px rgba(0,0,0,0.75)'
+        }, 0.05, "bounce1")
+        .staggerTo('#htmlSkills span:nth-child(-n+14)', 0.05, {
+            y: 0,
+            boxShadow: 'none',
+            delay: 0.05
+        }, 0.05, "bounce1");
+    var cssTL = new TimelineMax({
+            delay: 1,
+            repeat: -1,
+            repeatDelay: 3
+        })
+        .staggerTo('#cssSkills span:nth-child(-n+13)', 0.05, {
+            y: -5,
+            boxShadow: ' 2px 2px 5px 0px rgba(0,0,0,0.75)'
+        }, 0.05, "bounce1")
+        .staggerTo('#cssSkills span:nth-child(-n+13)', 0.05, {
+            y: 0,
+            boxShadow: 'none',
+            delay: 0.05
+        }, 0.05, "bounce1");
+    var jsTL = new TimelineMax({
+            repeat: -1,
+            repeatDelay: 4
+        })
+        .staggerTo('#jsSkills span:nth-child(-n+11)', 0.05, {
+            y: -5,
+            boxShadow: ' 2px 2px 5px 0px rgba(0,0,0,0.75)'
+        }, 0.05, "bounce1")
+        .staggerTo('#jsSkills span:nth-child(-n+11)', 0.05, {
+            y: 0,
+            boxShadow: 'none',
+            delay: 0.05
+        }, 0.05, "bounce1");
+    var phpTL = new TimelineMax({
+            delay: 2,
+            repeat: -1,
+            repeatDelay: 1
+        })
+        .staggerTo('#phpSkills span:nth-child(-n+10)', 0.05, {
+            y: -5,
+            boxShadow: ' 2px 2px 5px 0px rgba(0,0,0,0.75)'
+        }, 0.05, "bounce1")
+        .staggerTo('#phpSkills span:nth-child(-n+10)', 0.05, {
+            y: 0,
+            boxShadow: 'none',
+            delay: 0.05
+        }, 0.05, "bounce1");
+    var sqlTL = new TimelineMax({
+            delay: 0.5,
+            repeat: -1,
+            repeatDelay: 5
+        })
+        .staggerTo('#sqlSkills span:nth-child(-n+9)', 0.05, {
+            y: -5,
+            boxShadow: ' 2px 2px 5px 0px rgba(0,0,0,0.75)'
+        }, 0.05, "bounce1")
+        .staggerTo('#sqlSkills span:nth-child(-n+9)', 0.05, {
+            y: 0,
+            boxShadow: 'none',
+            delay: 0.05
+        }, 0.05, "bounce1");
+    var jqueryTL = new TimelineMax({
+            delay: 0.5,
+            repeat: -1,
+            repeatDelay: 5
+        })
+        .staggerTo('#jquerySkills span:nth-child(-n+12)', 0.05, {
+            y: -5,
+            boxShadow: ' 2px 2px 5px 0px rgba(0,0,0,0.75)'
+        }, 0.05, "bounce1")
+        .staggerTo('#jquerySkills span:nth-child(-n+12)', 0.05, {
+            y: 0,
+            boxShadow: 'none',
+            delay: 0.05
+        }, 0.05, "bounce1");
+    var gsapTL = new TimelineMax({
+            delay: 0.5,
+            repeat: -1,
+            repeatDelay: 5
+        })
+        .staggerTo('#gsapSkills span:nth-child(-n+8)', 0.05, {
+            y: -5,
+            boxShadow: ' 2px 2px 5px 0px rgba(0,0,0,0.75)'
+        }, 0.05, "bounce1")
+        .staggerTo('#gsapSkills span:nth-child(-n+8)', 0.05, {
+            y: 0,
+            boxShadow: 'none',
+            delay: 0.05
+        }, 0.05, "bounce1");
+    var bootstrapTL = new TimelineMax({
+            delay: 0.5,
+            repeat: -1,
+            repeatDelay: 5
+        })
+        .staggerTo('#bootstrapSkills span', 0.05, {
+            y: -5,
+            boxShadow: ' 2px 2px 5px 0px rgba(0,0,0,0.75)'
+        }, 0.05, "bounce1")
+        .staggerTo('#bootstrapSkills span', 0.05, {
+            y: 0,
+            boxShadow: 'none',
+            delay: 0.05
+        }, 0.05, "bounce1");
+    var mongoTL = new TimelineMax({
+            delay: 0.5,
+            repeat: -1,
+            repeatDelay: 5
+        })
+        .staggerTo('#mongoSkills span:nth-child(-n+7)', 0.05, {
+            y: -5,
+            boxShadow: ' 2px 2px 5px 0px rgba(0,0,0,0.75)'
+        }, 0.05, "bounce1")
+        .staggerTo('#mongoSkills span:nth-child(-n+7)', 0.05, {
+            y: 0,
+            boxShadow: 'none',
+            delay: 0.05
+        }, 0.05, "bounce1");
+    var gimpTL = new TimelineMax({
+            delay: 0.7,
+            repeat: -1,
+            repeatDelay: 2
+        })
+        .staggerTo('#gimpSkills span:nth-child(-n+9)', 0.05, {
+            y: -5,
+            boxShadow: ' 2px 2px 5px 0px rgba(0,0,0,0.75)'
+        }, 0.05, "bounce1")
+        .staggerTo('#gimpSkills span:nth-child(-n+9)', 0.05, {
+            y: 0,
+            boxShadow: 'none',
+            delay: 0.05
+        }, 0.05, "bounce1");
+    var illustratorTL = new TimelineMax({
+            delay: 0.5,
+            repeat: -1,
+            repeatDelay: 2
+        })
+        .staggerTo('#illustratorSkills span:nth-child(-n+8)', 0.05, {
+            y: -5,
+            boxShadow: ' 2px 2px 5px 0px rgba(0,0,0,0.75)'
+        }, 0.05, "bounce1")
+        .staggerTo('#illustratorSkills span:nth-child(-n+8)', 0.05, {
+            y: 0,
+            boxShadow: 'none',
+            delay: 0.05
+        }, 0.05, "bounce1");
+    var inkscapeTL = new TimelineMax({
+            delay: 0.1,
+            repeat: -1,
+            repeatDelay: 4
+        })
+        .staggerTo('#inkscapeSkills span:nth-child(-n+7)', 0.05, {
+            y: -5,
+            boxShadow: ' 2px 2px 5px 0px rgba(0,0,0,0.75)'
+        }, 0.05, "bounce1")
+        .staggerTo('#inkscapeSkills span:nth-child(-n+7)', 0.05, {
+            y: 0,
+            boxShadow: 'none',
+            delay: 0.05
+        }, 0.05, "bounce1");
 
-   jQuery('#article4').scroll(function(){
-        alert('article4 scrolled');
-   });
 
 });
+
+function makeParticles() {
+    var twitterTimeline = new TimelineMax();
+    var linkedinTimeline = new TimelineMax();
+    var gradumTimeline = new TimelineMax();
+    var enacTimeline = new TimelineMax();
+    Math.randMinMax = function (t, n, a) {
+        var r = t + Math.random() * (n - t)
+        return a && (r = Math.round(r)), r
+    }
+    var w = window.innerWidth,
+        h = window.innerHeight,
+        numberOfStars = 10,
+        PosX = 0,
+        PosY = 0;
+    for (i = 0; i < numberOfStars; i++) {
+        twitterStar = jQuery('<div class="twitterBackground" />'),
+            PosX = Math.floor(Math.random() * w);
+        PosY = -500;
+        var size = Math.floor(Math.random() * 30);
+        jQuery('#article5').append(twitterStar);
+        TweenLite.set(twitterStar, {
+            x: PosX,
+            y: PosY - (size * 5),
+            width: size,
+            height: size
+        })
+        twitterTimeline.to(twitterStar, Math.randMinMax(5, 7), {
+                x: PosX,
+                y: h + (size * 2),
+                opacity: 1,
+                repeat: -1,
+                repeatDelay: Math.randMinMax(0, 1),
+                ease: Linear.easeNone
+            },
+            Math.randMinMax(0, 4));
+    }
+    Math.randMinMax2 = function (t2, n2, a2) {
+        var r2 = t2 + Math.random() * (n2 - t2)
+        return a2 && (r2 = Math.round(r2)), r2
+    }
+    var w2 = window.innerWidth,
+        h2 = window.innerHeight,
+        numberOfStars2 = 10,
+        PosX2 = 0,
+        PosY2 = 0;
+    for (i2 = 0; i2 < numberOfStars2; i2++) {
+        linkedinStar = jQuery('<div class="linkedinBackground" />'),
+            PosX2 = Math.floor(Math.random() * w2);
+        PosY2 = -500;
+        var size2 = Math.floor(Math.random() * 30);
+        jQuery('#article5').append(linkedinStar);
+        TweenLite.set(linkedinStar, {
+            x: PosX2,
+            y: PosY2 - (size2 * 5),
+            width: size2,
+            height: size2
+        })
+        linkedinTimeline.to(linkedinStar, Math.randMinMax2(5, 7), {
+                x: PosX2,
+                y: h2 + (size2 * 2),
+                opacity: 1,
+                repeat: -1,
+                repeatDelay: Math.randMinMax2(0, 1),
+                ease: Linear.easeNone
+            },
+            Math.randMinMax2(0, 4));
+    }
+    Math.randMinMax3 = function (t3, n3, a3) {
+        var r3 = t3 + Math.random() * (n3 - t3)
+        return a3 && (r3 = Math.round(r3)), r3
+    }
+    var w3 = window.innerWidth,
+        h3 = window.innerHeight,
+        numberOfStars3 = 10,
+        PosX3 = 0,
+        PosY3 = 0;
+    for (i3 = 0; i3 < numberOfStars3; i3++) {
+        gradumStar = jQuery('<div class="gradumBackground" />'),
+            PosX3 = Math.floor(Math.random() * w3);
+        PosY3 = -500;
+        var size3 = Math.floor(Math.random() * 30);
+        jQuery('#article5').append(gradumStar);
+        TweenLite.set(gradumStar, {
+            x: PosX3,
+            y: PosY3 - (size3 * 5),
+            width: size3,
+            height: size3
+        })
+        gradumTimeline.to(gradumStar, Math.randMinMax3(5, 7), {
+                x: PosX3,
+                y: h3 + (size3 * 2),
+                opacity: 1,
+                repeat: -1,
+                repeatDelay: Math.randMinMax3(0, 1),
+                ease: Linear.easeNone
+            },
+            Math.randMinMax3(0, 4));
+    }
+    Math.randMinMax4 = function (t4, n4, a4) {
+        var r4 = t4 + Math.random() * (n4 - t4)
+        return a4 && (r4 = Math.round(r4)), r4
+    }
+    var w4 = window.innerWidth,
+        h4 = window.innerHeight,
+        numberOfStars3 = 10,
+        PosX4 = 0,
+        PosY4 = 0;
+    for (i4 = 0; i4 < numberOfStars3; i4++) {
+        enacstar = jQuery('<div class="enacBackground" />'),
+            PosX4 = Math.floor(Math.random() * w4);
+        PosY4 = -500;
+        var size4 = Math.floor(Math.random() * 30);
+        jQuery('#article5').append(enacstar);
+        TweenLite.set(enacstar, {
+            x: PosX4,
+            y: PosY4 - (size4 * 5),
+            width: size4,
+            height: size4
+        })
+        gradumTimeline.to(enacstar, Math.randMinMax4(5, 7), {
+                x: PosX4,
+                y: h4 + (size4 * 2),
+                opacity: 1,
+                repeat: -1,
+                repeatDelay: Math.randMinMax4(0, 1),
+                ease: Linear.easeNone
+            },
+            Math.randMinMax4(0, 4));
+    }
+
+}
+makeParticles();
 jQuery(window).resize(articleHeight);

@@ -14,11 +14,11 @@ get_header('index');
     </article>
 
     <article class="fullHeight" id="article4">
-       <?php  require('fun-hobby-time.php');       ?>
+       <?php  require('fun-hobby-time.php');  ?>
     </article>
 
     <article class="fullHeight" id="article5">
-        <h1>Where to find me</h1>
+        <?php require('come-find-me.php');  ?>
     </article>
 
     <article class="fullHeight" id="article6">

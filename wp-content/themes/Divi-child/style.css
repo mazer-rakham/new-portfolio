@@ -66,114 +66,203 @@ font-family: 'Crushed', cursive;
 #always-under-construction {
     font-family: 'Neucha', cursive;
 }
+
 .recent-posts-wrapper-main {
-    width:70%;
-    position:absolute;
-    transform:translate(-50%, -50%);
-    left:50%;
+    width: 70%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
 }
-#next-blog-post, #previous-blog-post {
-    position:absolute;
-    bottom:30px;
+
+#next-blog-post,
+#previous-blog-post {
+    position: absolute;
+    bottom: 30px;
 }
+
 #next-blog-post {
-    right:0;
+    right: 0;
 }
+
+#article5 {
+    border: 1px solid red;
+}
+
 #main-article-wrapper {
     position: relative;
     width: 100%;
     height: 100%;
     perspective: 1000px;
 }
+
 #blog-previews {
-    width:100%;
-    position:relative;
+    width: 100%;
+    position: relative;
 }
+
+#mech-wrapper {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 500;
+}
+#skills-navigation-wrapper a {
+    display: inline-block;
+}
+
+.twitterBackground {
+    background-image: url(images/twitter.png);
+    background-size: cover;
+    position: absolute;
+}
+
+.linkedinBackground {
+    background-image: url(images/linkedin-logo-copy.png);
+    background-size: cover;
+    position: absolute;
+}
+
+.gradumBackground {
+    background-image: url(images/gradum-ante-star.png);
+    background-size: cover;
+    position: absolute;
+}
+
+.enacBackground {
+    background-image: url(images/enac_logo.png);
+    background-size: cover;
+    position: absolute;
+}
+
+#article5 svg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+#skills-main-wrapper {
+    max-width: 100%;
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+}
+
 #article1 .navigation-wrapper {
-    position:absolute;
+    position: absolute;
     bottom: 20px;
 }
+
 #article1 .navigation-wrapper a {
     display: inline-block;
-    color:black;
-    margin:0 15px;
+    color: black;
+    margin: 0 15px;
 }
+
 #hammer-time-wrapper {
     position: absolute;
-    right:0;
+    right: 0;
 }
-#article4 {
-   
-}
-#main-article-wrapper {
-    
-}
+
+#article4 {}
+
+#main-article-wrapper {}
+
 #hobby-scene-wrapper {
     width: 300%;
+    left: 50%;
     border: 3px solid red;
-    position:absolute;
+    position: absolute;
+    height: 100%;
 }
+
 #skills-graphic-wrapper span {
-    width:20px;
-    height:20px;
-    border:2px solid #595959;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #595959;
     display: inline-block;
     border-radius: 50%;
 }
+
+#hobby-scene-wrapper div {
+    width: 24%;
+    height: 100%;
+    border: 1px solid black;
+    display: inline-block;
+}
+
 #htmlSkills span:nth-child(-n+14) {
     background-color: #80bfff;
 }
+
 #cssSkills span:nth-child(-n+13) {
     background-color: #80bfff;
 }
+
 #jsSkills span:nth-child(-n+11) {
     background-color: #80bfff;
 }
+
 #phpSkills span:nth-child(-n+10) {
     background-color: #80bfff;
 }
+
 #sqlSkills span:nth-child(-n+9) {
     background-color: #80bfff;
 }
+
 #jquerySkills span:nth-child(-n+12) {
     background-color: #80bfff;
 }
+
 #gsapSkills span:nth-child(-n+8) {
     background-color: #80bfff;
 }
+
 #bootstrapSkills span {
     background-color: #80bfff;
 }
+
 #mongoSkills span:nth-child(-n+7) {
     background-color: #80bfff;
 }
+
 #gimpSkills span:nth-child(-n+9) {
     background-color: #80bfff;
 }
+
 #illustratorSkills span:nth-child(-n+8) {
     background-color: #80bfff;
 }
+
 #inkscapeSkills span:nth-child(-n+7) {
     background-color: #80bfff;
 }
+
 #article2,
-#article4,
-#article5,
 #article6 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: wrap;
 }
+
 #blog-previews {
-    flex:100%;
+    flex: 100%;
 }
+
 #article6 h1 {
-    flex:100%;
+    flex: 100%;
 }
+
 #welcomeLeft,
 #welcomeRight {
-   flex:50%;
+    flex: 50%;
     box-sizing: border-box;
 }
 
@@ -193,4 +282,15 @@ font-family: 'Crushed', cursive;
 .main-hobbies,
 .main-come-find-me {
     cursor: crosshair;
+}
+
+#article2 {
+    background-image: url(images/thomas-flock.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+#article2 h2 {
+    color: white;
 }

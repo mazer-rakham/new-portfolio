@@ -7,9 +7,9 @@
 <a href="#" class="main-skills">
     <p>Skills</p>
 </a>
-<a href="#" class="main-hobbies">
+<!-- <a href="#" class="main-hobbies">
     <p>Hobbies</p>
-</a>
+</a> -->
 <a href="#" class="main-come-find-me">
     <p>Where to find me</p>
 </a>
