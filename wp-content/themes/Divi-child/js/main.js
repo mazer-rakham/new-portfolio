@@ -1,82 +1,41 @@
-// function setXcoords() {
-//     TweenMax.set("#skull-panel", {
-//         x: jQuery(window).width()
-//     });
-// }
-// setXcoords();
+
 var horizontalController = new ScrollMagic.Controller({
     vertical: false
 });
-
-// function createSkullSCene() {
-//     return new ScrollMagic.Scene({
-//             triggerElement: "#skull-panel",
-//             duration: 600,
-//             triggerHook: 0
-//         })
-//         .setPin('#skull-panel')
-//         .setTween('#skull-panel', 1, {
-//             x: 0
-//         })
-//         .addIndicators()
-//         .addTo(smController);
-// }
-// var skullScene = createSkullSCene();
-// jQuery(window).resize(function () {
-//     setXcoords();
-//     skullScene.destroy(true);
-//     skullScene = createSkullSCene();
-// });
-// var jeepVideo = jQuery('.hobby3 video');
-// jeepVideo[0].muted = true;
-// jeepVideo.removeAttr( 'controls' );
-// function playJeepVideo(){
-//     jeepVideo[0].play();
-// }
-// TweenMax.set('#skull-panel',{minHeight:'600px'});
-// TweenMax.set('.hobby1, .hobby2, .hobby3, .hobby4, .hobby5',{x:-200, opacity:0, position:'absolute'});
-// TweenMax.set('.hobby12, .hobby22, .hobby32, .hobby42, .hobby52',{x:700,opacity:0,position:'absolute'});
-// TweenLite.defaultEase = Linear.easeNone;
-// var hobbyTimeline = new TimelineMax()
-//             .to('.hobby1',1,{x:0, opacity:1},'hplay1')
-//             .to('.hobby1',1,{x:200,opacity:0},'hplay12')
-//             .to('.hobby12',1,{x:500, opacity:1},'hplay1')
-//             .to('.hobby12',1,{x:200,opacity:0},'hplay12')
-//             .to('.hobby2',1,{x:0, opacity:1},'hplay2')
-//             .to('.hobby2',1,{x:200,opacity:0},'hplay22')
-//             .to('.hobby22',1,{x:500, opacity:1},'hplay2')
-//             .to('.hobby22',1,{x:200,opacity:0},'hplay22')
-//             .add(playJeepVideo)
-//             .to('.hobby3',1,{x:0, opacity:1},'hplay3')
-//             .to('.hobby3',1,{x:200,opacity:0},'hplay32')
-//             .to('.hobby32',1,{x:500, opacity:1},'hplay3')
-//             .to('.hobby32',1,{x:200,opacity:0},'hplay32')
-//             .to('.hobby4',1,{x:0, opacity:1},'hplay4')
-//             .to('.hobby4',1,{x:200,opacity:0},'hplay42')
-//             .to('.hobby42',1,{x:500, opacity:1},'hplay4')
-//             .to('.hobby42',1,{x:200,opacity:0},'hplay42')
-//             .to('.hobby5',1,{x:0, opacity:1},'hplay5')
-//             .to('.hobby5',1,{x:200,opacity:0},'hplay52')
-//             .to('.hobby52',1,{x:500, opacity:1},'hplay5')
-//             .to('.hobby52',1,{x:200,opacity:0},'hplay52')
-//             .to('#work-all-the-time',1,{opacity:1})
-// var hobbiesScene = new ScrollMagic.Scene({
-//     triggerElement:'#hobbies-trigger',
-//     reverse: false
-// })
-// .setTween(hobbyTimeline)
-
-// .addTo(smController);
-var hobbyFunTime = new ScrollMagic.Scene({
-        triggerElement: '#hobby-scene-wrapper',
-        triggerHook: 0,
-        duration: 600
+var loadingTimeline = new TimelineMax();
+Math.randMinMax5 = function (t5, n5, a5) {
+    var r5 = t5 + Math.random() * (n5 - t5)
+    return a5 && (r5 = Math.round(r5)), r5
+}
+var w5 = window.innerWidth,
+    h5 = window.innerHeight,
+    numberOfStars5 = 100,
+    PosX5 = 0,
+    PosY5 = 0;
+for (i5 = 0; i5 < numberOfStars5; i5++) {
+    loadingStar = jQuery('<div class="loading-background" />'),
+        PosX5 = Math.floor(Math.random() * w5);
+    PosY5 = -500;
+    var size5 = Math.floor(Math.random() * 30);
+    jQuery('#loading-screen').append(loadingStar);
+    TweenLite.set(loadingStar, {
+        x: PosX5,
+        y: PosY5 - (size5 * 5),
+        width: size5 + 200,
+        height: size5 + 50
     })
-    .setTween('', 1, {
-        rotation: '180deg'
-    })
-    .addIndicators()
-    .addTo(horizontalController);
+    loadingTimeline.to(loadingStar, Math.randMinMax5(5, 7), {
+            x: PosX5,
+            y: h5 + (size5 * 2),
+            opacity: 1,
+            repeat: -1,
+            repeatDelay: Math.randMinMax5(0, 1),
+            ease: Linear.easeNone
+        },
+        Math.randMinMax5(0, 4));
+}
+
+
 
 
 TweenMax.set('.fullHeight', {
@@ -183,7 +142,7 @@ function articleHeight() {
 jQuery(document).ready(function () {
     // calls the function to make the articles the same height as viewpost
     articleHeight();
-
+    jQuery('#loading-screen').css("display","none");
     // the recent posts slideshow -------------------------------------------------
     jQuery(function () {
 
@@ -521,6 +480,7 @@ function makeParticles() {
     var linkedinTimeline = new TimelineMax();
     var gradumTimeline = new TimelineMax();
     var enacTimeline = new TimelineMax();
+   
     Math.randMinMax = function (t, n, a) {
         var r = t + Math.random() * (n - t)
         return a && (r = Math.round(r)), r
@@ -645,6 +605,7 @@ function makeParticles() {
             },
             Math.randMinMax4(0, 4));
     }
+
 
 }
 makeParticles();

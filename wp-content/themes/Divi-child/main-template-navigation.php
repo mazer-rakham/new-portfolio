@@ -13,3 +13,5 @@
 <a href="#" class="main-come-find-me">
     <p>Where to find me</p>
 </a>
+<a href="http://www.mazer-rakham.com/blog/"><p>Blog</p></a>
+<a href="#" class="goHome">Home</a>		

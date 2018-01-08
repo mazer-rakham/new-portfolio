@@ -31,11 +31,14 @@ font-family: 'Give You Glory', cursive;
 font-family: 'Crushed', cursive;
 */
 
+
 #main-index-template-body {
     overflow-x: hidden;
     overflow-y: hidden;
 }
-
+#welcomeLeft a:link,#welcomeLeft a:visited, #welcomeLeft a {
+    color:#9933ff !important;
+}
 .hobby3 video {
     max-width: 400px;
     height: auto;
@@ -84,9 +87,7 @@ font-family: 'Crushed', cursive;
     right: 0;
 }
 
-#article5 {
-    border: 1px solid red;
-}
+#article5 {}
 
 #main-article-wrapper {
     position: relative;
@@ -101,11 +102,17 @@ font-family: 'Crushed', cursive;
 }
 
 #mech-wrapper {
-    width: 100%;
-    max-width: 400px;
-    position: relative;
+    max-width: 100%;
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 20%;
+    position: absolute;
+    left: 50%;
     z-index: 500;
 }
+
 #skills-navigation-wrapper a {
     display: inline-block;
 }
@@ -142,7 +149,20 @@ font-family: 'Crushed', cursive;
     opacity: 0.1;
     z-index: 1;
 }
-
+#loading-screen {
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-color: white;
+    z-index:99999;
+}
+.loading-background {
+    background-image: url(images/loading.png);
+    background-size: 100% 100%;
+    position: absolute;
+}
 #skills-main-wrapper {
     max-width: 100%;
     -ms-transform: translateX(-50%);
@@ -151,6 +171,7 @@ font-family: 'Crushed', cursive;
     transform: translateX(-50%);
     position: absolute;
     left: 50%;
+    top:50px;
 }
 
 #article1 .navigation-wrapper {
@@ -167,8 +188,24 @@ font-family: 'Crushed', cursive;
 #hammer-time-wrapper {
     position: absolute;
     right: 0;
+    max-width: 100%;
+    bottom:0;
 }
 
+#hammer-time-wrapper svg {
+    max-width: 100%;
+    opacity:0.1;
+}
+#hacker-text-wrapper {
+    max-width: 100%;
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top:20%;
+}
 #article4 {}
 
 #main-article-wrapper {}
@@ -180,7 +217,26 @@ font-family: 'Crushed', cursive;
     position: absolute;
     height: 100%;
 }
-
+#about-navigation-wrapper, #come-find-me-nav-wrapper  {
+    position: absolute;
+    left:10px;
+    bottom:20px;
+    z-index:99999;
+}
+#skills-navigation-wrapper {
+    position: absolute;
+    left:10px;
+    top:20px;
+    z-index:99999;
+}
+#about-navigation-wrapper a, #come-find-me-nav-wrapper a, #skills-navigation-wrapper a {
+    display: inline-block;
+    color:white;
+    margin:0 10px;
+}
+#come-find-me-nav-wrapper a, #skills-navigation-wrapper a {
+    color:black;
+}
 #skills-graphic-wrapper span {
     width: 20px;
     height: 20px;
@@ -293,4 +349,15 @@ font-family: 'Crushed', cursive;
 
 #article2 h2 {
     color: white;
+}
+
+@media(max-width:630px){
+    #previous-blog-post, #next-blog-post {
+        display: none;
+    }
+}
+@media(max-width:700px) {
+    #skills-main-wrapper {
+        width: 100%;
+    }
 }

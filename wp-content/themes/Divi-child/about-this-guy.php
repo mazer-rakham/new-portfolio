@@ -1,5 +1,7 @@
 <div id="about-main-wrapper">
-    <?php require('main-template-navigation.php'); ?>
+    <div id="about-navigation-wrapper">
+        <?php require('main-template-navigation.php'); ?>
+    </div>
     <p>Self Taught</p>
     <p>Started my computer career at NAS in Herndon</p>
     <p>Worked in almost every industry, from automotive to waiting tables.</p>

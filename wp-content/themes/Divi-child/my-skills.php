@@ -1,7 +1,5 @@
 <div id="skills-main-wrapper">
-    <div id="skills-navigation-wrapper">
-        <?php  require('main-template-navigation.php');  ?>
-    </div>
+
     <h1>Oh man, whatta I do. That is a bit of a hard one.</h1>
     <h3>I do a bit of everything, I am a pretty good tool of code development, I love learning the most I can.</h3>
     <p>I design, develop, I do it all!</p>
@@ -67,3 +65,6 @@
         <p>You can find some of my work here.</p>
     </div>
 </div>
+<div id="skills-navigation-wrapper">
+        <?php  require('main-template-navigation.php');  ?>
+    </div>

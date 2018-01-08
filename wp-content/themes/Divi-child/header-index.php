@@ -36,6 +36,4 @@
 
 <body id="main-index-template-body" <?php body_class(); ?>>
 	<div id="et-main-area">
-		<div id="test-div">			
-			<a href="#" class="goHome">Home</a>			
-		</div>
+	

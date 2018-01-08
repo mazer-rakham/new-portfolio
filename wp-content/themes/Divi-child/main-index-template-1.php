@@ -24,7 +24,7 @@ get_header('index');
     <article class="fullHeight" id="article6">
         <h1>Welcome to..</h1>
         <div id="welcomeLeft">
-            <h1>to the portfolio of a hacker.</h1>
+            <h1>to the portfolio of a hacker.<br />this splash page is a test/showoff, see my portfolio <a href="http://www.mazer-rakham.com/portfolio/">here</a></h1>
         </div>
         <div id="welcomeRight">           
             <?php require('main-template-navigation.php'); ?>

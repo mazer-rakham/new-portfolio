@@ -7,7 +7,9 @@
 
 
 	</div> <!-- #page-container -->
+<div id="loading-screen">
 
+</div>
 	<?php wp_footer(); ?>
 </body>
 </html>
